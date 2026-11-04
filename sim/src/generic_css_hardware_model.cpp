@@ -13,7 +13,7 @@ namespace Nos3
         sim_logger->info("Generic_cssHardwareModel::Generic_cssHardwareModel:  NOS Engine connection string: %s.", connection_string.c_str());
 
         /* Get a data provider */
-        std::string dp_name = config.get("simulator.hardware-model.data-provider.type", "GENERIC_CSS_42_PROVIDER");
+        std::string dp_name = config.get("simulator.hardware-model.data-provider.type", "GENERIC_CSS_HIL_PROVIDER");
         _generic_css_dp = SimDataProviderFactory::Instance().Create(dp_name, config);
         sim_logger->info("Generic_cssHardwareModel::Generic_cssHardwareModel:  Data provider %s created.", dp_name.c_str());
 
