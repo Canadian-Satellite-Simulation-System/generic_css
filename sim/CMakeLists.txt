@@ -16,6 +16,7 @@ set(generic_css_sim_src
     src/generic_css_data_point.cpp
     src/generic_css_shmem_data_provider.cpp
     src/generic_css_hil_data_provider.cpp
+    src/generic_css_switching_data_provider.cpp
 )
 
 # For Code::Blocks and other IDEs
