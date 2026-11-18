@@ -2,6 +2,7 @@ project(generic_css_sim)
 
 find_package(ITC_Common REQUIRED QUIET COMPONENTS itc_logger)
 find_package(NOSENGINE REQUIRED QUIET COMPONENTS common transport client i2c)
+find_package(Threads REQUIRED)
 
 include_directories(inc
                     ${sim_common_SOURCE_DIR}/inc
@@ -14,6 +15,8 @@ set(generic_css_sim_src
     src/generic_css_data_provider.cpp
     src/generic_css_data_point.cpp
     src/generic_css_shmem_data_provider.cpp
+    src/generic_css_hil_data_provider.cpp
+    src/generic_css_switching_data_provider.cpp
 )
 
 # For Code::Blocks and other IDEs
@@ -23,6 +26,7 @@ set(generic_css_sim_libs
     sim_common
     ${ITC_Common_LIBRARIES}
     ${NOSENGINE_LIBRARIES}
+    Threads::Threads
 )
 
 set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_RPATH}:$ORIGIN/../lib") # Pick up .so in install directory
